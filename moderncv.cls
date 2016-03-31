@@ -86,40 +86,39 @@
 \RequirePackage{fontawesome}
 
 % font loading
-%\usepackage{ifxetex,ifluatex}
-%\newif\ifxetexorluatex
-%\ifxetex
-%  \xetexorluatextrue
-%\else
-%  \ifluatex
-%    \xetexorluatextrue
-%  \else
-%    \xetexorluatexfalse
-%  \fi
-%\fi
+\usepackage{ifxetex,ifluatex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+
 % automatic loading of latin modern fonts
-%\ifxetexorluatex
-%  \RequirePackage{fontspec}
-%  \defaultfontfeatures{Ligatures=TeX}
-%  \RequirePackage{unicode-math}
-%  \setmainfont{Latin Modern}
-%  \setsansfont{Latin Modern Sans}
-%  \setmathfont{Latin Modern Math}
-%\else
+\ifxetexorluatex
+  % Needed to manage fonts
+  \RequirePackage{fontspec}
+  % To support LaTeX quoting style
+  \defaultfontfeatures{Ligatures=TeX}
+  % Needed to manage math fonts
+  \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
+  \setsansfont{Latin Modern Sans}
+  \setmathfont{Latin Modern Math}
+  \setmainfont{Latin Modern Roman}
+\else
   \RequirePackage[T1]{fontenc}
   \IfFileExists{lmodern.sty}%
     {\RequirePackage{lmodern}}%
     {}
-%\fi
+\fi
 
 % MarVoSym font for symbols
-%\RequirePackage{marvosym}
-\newcommand*{\marvosymbol}[1]{}
-%\ifxetexorluatex
-%  \renewcommand*{\marvosymbol}[1]{{\fontspec{MarVoSym}\char#1}}
-%\else
-  \renewcommand*{\marvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
-%\fi
+\RequirePackage{marvosym}
+\newcommand*{\marvosymbol}[1]{\mvchr{#1}}
 
 % hyper links (hyperref is loaded at the end of the preamble to pass options required by loaded packages such as CJK)
 \RequirePackage{url}
@@ -180,7 +179,6 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
-
 %-------------------------------------------------------------------------------
 %                class definition
 %-------------------------------------------------------------------------------
@@ -216,7 +214,8 @@
 \newcommand*{\address}[2]{\def\@addressstreet{#1}\def\@addresscity{#2}}
 \newcommand*{\mobile}[1]{\def\@mobile{#1}}
 \newcommand*{\phone}[1]{\def\@phone{#1}}
-\newcommand*{\fax}[1]{\def\@fax{#1}}
+\newcommand*{\github}[1]{\def\@github{#1}}
+\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 \newcommand*{\email}[1]{\def\@email{#1}}
 \newcommand*{\homepage}[2]{\def\@homepage{#1}\def\@homepagetitle{#2}}
 
@@ -228,7 +227,9 @@
 
 % symbols
 %   itemize labels (the struts were added to correct inter-item spacing (works for single line items, until a solution is found for multi-line ones...)
-\newcommand*{\labelitemi}{\strut\textcolor{color1}{\marvosymbol{123}}}% equivalent to \Neutral from marvosym package; alternative: \fontencoding{U}\fontfamily{ding}\selectfont\tiny\symbol{'102}
+
+%\newcommand*{\labelitemi}{\strut\textcolor{color1}{\tiny\faCircleO}}
+\newcommand*{\labelitemi}{\strut\textcolor{color1}{\Neutral}}
 \newcommand*{\labelitemii}{\strut\textcolor{color1}{\large\bfseries-}}
 \newcommand*{\labelitemiii}{\strut\textcolor{color1}{\rmfamily\textperiodcentered}}% alternative: \textasteriskcentered; the \rmfamily is required to force Latin Modern fonts when using sans serif, as OMS/lmss/m/n is not defined and gets substituted by OMS/cmsy/m/n
 \newcommand*{\labelitemiv}{\labelitemiii}
@@ -241,8 +242,9 @@
 \newcommand*{\listitemsymbol}{\labelitemi~}
 \newcommand*{\addresssymbol}{}
 \newcommand*{\mobilesymbol}{}
+\newcommand*{\linkedinsymbol}{}
+\newcommand*{\githubsymbol}{}
 \newcommand*{\phonesymbol}{}
-\newcommand*{\faxsymbol}{}
 \newcommand*{\emailsymbol}{}
 \newcommand*{\homepagesymbol}{}
 
@@ -260,7 +262,7 @@
 % loads a style scheme
 \newcommand*{\moderncvstyle}[1]{
   \RequirePackage{moderncvstyle#1}}
-  
+
 % loads a color scheme
 \newcommand*{\moderncvcolor}[1]{
   \RequirePackage{moderncvcolor#1}}

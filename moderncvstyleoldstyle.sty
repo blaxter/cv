@@ -29,18 +29,18 @@
 %                overall style definition
 %-------------------------------------------------------------------------------
 % fonts
-%\ifxetexorluatex
-%  \setmainfont[Numbers={OldStyle,Proportional}, BoldFont={Kurier Bold}, ItalicFont={Kurier Light Italic}, BoldItalicFont={Kurier Bold Italic}]{Kurier Light}
-%  \setsansfont[Numbers={OldStyle,Proportional}, BoldFont={Kurier Bold}, ItalicFont={Kurier Light Italic}, BoldItalicFont={Kurier Bold Italic}]{Kurier Light}
-%  \setmathfont{Kurier Light}
-%  \setmathfont[range=\mathit,\mathsfit]{Kurier Light Italic}
-%  \setmathfont[range=\mathbfup,\mathbfsfup]{Kurier Bold}
-%  \setmathfont[range=\mathbfit,\mathbfsfit]{Kurier Bold Italic}
-%\else
+\ifxetexorluatex
+  \setmainfont[Numbers={OldStyle,Proportional}, BoldFont={Kurier Bold}, ItalicFont={Kurier Light Italic}, BoldItalicFont={Kurier Bold Italic}]{Kurier Light}
+  \setsansfont[Numbers={OldStyle,Proportional}, BoldFont={Kurier Bold}, ItalicFont={Kurier Light Italic}, BoldItalicFont={Kurier Bold Italic}]{Kurier Light}
+  \setmathfont{Kurier Light}
+  \setmathfont[range=\mathit,\mathsfit]{Kurier Light Italic}
+  \setmathfont[range=\mathbfup,\mathbfsfup]{Kurier Bold}
+  \setmathfont[range=\mathbfit,\mathbfsfit]{Kurier Bold Italic}
+\else
   \IfFileExists{kurier.sty}%
     {\RequirePackage[light,math]{kurier}}%
     {}
-%\fi
+\fi
 
 % symbols
 \renewcommand*{\listitemsymbol}{\labelitemi~}
@@ -159,7 +159,7 @@
     \ifthenelse{\isundefined{\@homepage}}{}{%
 	\ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
 	{\makenewline\homepagesymbol\httplink{\@homepage}}%
-	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}% 
+	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}%
     \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}}
 
 \renewcommand*{\section}[1]{%
@@ -302,7 +302,7 @@
       \ifthenelse{\isundefined{\@homepage}}{}{%
 	\ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
 	{\makenewline\homepagesymbol\httplink{\@homepage}}%
-	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}% 
+	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}}%
   % ensure no extra spacing after \makelettertitle due to a possible blank line
 %  \ignorespacesafterend% not working

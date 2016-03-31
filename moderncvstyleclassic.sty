@@ -27,22 +27,32 @@
 %                overall style definition
 %-------------------------------------------------------------------------------
 % fonts
-%\ifxetexorluatex
-%  \setmainfont{Latin Modern Roman}
-%  \setsansfont{Latin Modern Sans}
-%  \setmathfont{Latin Modern Math}
-%\else
+\ifxetexorluatex
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmathfont{Latin Modern Math}
+\else
   \IfFileExists{lmodern.sty}%
     {\RequirePackage{lmodern}}%
     {}
-%\fi
+\fi
 
 % symbols
-\renewcommand*{\mobilesymbol}{\marvosymbol{72}~}
-\renewcommand*{\phonesymbol}{\marvosymbol{84}~}
-\renewcommand*{\faxsymbol}{\marvosymbol{117}~}
-\renewcommand*{\emailsymbol}{\marvosymbol{66}~}
-\renewcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+\ifxetexorluatex
+  \renewcommand*{\addresssymbol}{\faHome~}
+  \renewcommand*{\mobilesymbol}{\faMobile~}
+  \renewcommand*{\phonesymbol}{\faPhone~}
+  \renewcommand*{\emailsymbol}{\faEnvelope~}
+  \renewcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+  \renewcommand*{\githubsymbol}{\faGithubSquare~}
+  \renewcommand*{\linkedinsymbol}{\faLinkedinSquare~}
+\else
+  \renewcommand*{\mobilesymbol}{\marvosymbol{72}~}
+  \renewcommand*{\phonesymbol}{\marvosymbol{84}~}
+  \renewcommand*{\emailsymbol}{\marvosymbol{66}~}
+  \renewcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+\fi
+
 
 
 %-------------------------------------------------------------------------------
@@ -112,12 +122,11 @@
         \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}% if \addresstreet is defined, \addresscity will always be defined but could be empty
       \ifthenelse{\isundefined{\@mobile}}{}{\makenewline\mobilesymbol\@mobile}%
       \ifthenelse{\isundefined{\@phone}}{}{\makenewline\phonesymbol\@phone}%
-      \ifthenelse{\isundefined{\@fax}}{}{\makenewline\faxsymbol\@fax}%
       \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
       \ifthenelse{\isundefined{\@homepage}}{}{%
 	\ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
 	{\makenewline\homepagesymbol\httplink{\@homepage}}%
-	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}% 
+	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
     \end{tabular}
   }%
@@ -267,7 +276,6 @@
         \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}%
       \ifthenelse{\isundefined{\@mobile}}{}{\makenewline\mobilesymbol\@mobile}%
       \ifthenelse{\isundefined{\@phone}}{}{\makenewline\phonesymbol\@phone}%
-      \ifthenelse{\isundefined{\@fax}}{}{\makenewline\faxsymbol\@fax}%
       \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
      \ifthenelse{\isundefined{\@homepage}}{}{%
 	\ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
