@@ -83,6 +83,8 @@
 % color
 \RequirePackage{xcolor}
 
+\RequirePackage{fontawesome}
+
 % font loading
 %\usepackage{ifxetex,ifluatex}
 %\newif\ifxetexorluatex
