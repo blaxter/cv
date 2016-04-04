@@ -54,22 +54,21 @@
 
 % All information in this block is optional, comment out any lines you don't need
 \title{Curriculum Vitae}
-\address{123 Broadway}{City, State 12345}
-\mobile{(000) 111 1111}
-\phone{(000) 111 1112}
-\email{blaxter@gmail.com}
+\address{--ADDRESS_1--}{--ADDRESS_2--}
+\phone{(+34) --PHONE_NUMBER--}
+\email{--EMAIL--}
 % The first argument is the url for the clickable link, the second argument
 % is the url displayed in the template - this allows special characters to be
 % displayed such as the tilde in this example
 \homepage{bicosyes.com}{bicosyes.com}
 \github{blaxter}
 \linkedin{blaxter}
-\extrainfo{additional information}
+\extrainfo{}
 
 % The first bracket is the picture height, the second is the thickness of the
 % frame around the picture (0pt for no frame)
 \photo[70pt][0.4pt]{pictures/face}
-\quote{"MingLee MingLee" - MingLee}
+\quote{Software developer}
 
 %-------------------------------------------------------------------------------
 

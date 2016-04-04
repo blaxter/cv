@@ -9,6 +9,9 @@ all: $(FILE).pdf
 open: $(FILE).pdf
 	xdg-open $<
 
+%.tex: %.tex.in
+	./insert_personal_data.sh
+
 clean:
 	rm *.aux *.log *.out *.pdf
 
