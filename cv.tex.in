@@ -109,7 +109,7 @@
 %-------------------------------------------------------------------------------
 
 \section{Education}
-
+\hyphenation{programming}
 \cventry{2002--2007}{Computer Science}{5-year degree}{University of Zaragoza}
     {Specialized on programming, databases and information systems}
     {Degree's final project:
@@ -200,11 +200,12 @@ order:
     The programming language is not really an important factor, just a tool.}
 \cvitem{Web Development}
     {I've used lot of MVC frameworks, mostly \textsc{Ruby On rails} but also
-    \textsc{Django} and \textsc{Symphony}. In several projects I used \textsc{GWT}
-    for some components.}
+    \mbox{\textsc{Django}} and \mbox{\textsc{Symfony}}.
+    In several projects I used \textsc{GWT} for some components.}
 \cvitem{Databases}
     {Lots of experience developing and mantaining \textsc{MySQL} databases, also
-    used \textsc{PostgreSQL}, \textsc{sqlite} and \textsc{Oracle}.}
+    used \mbox{\textsc{PostgreSQL}}, \mbox{\textsc{sqlite}} and
+    \mbox{\textsc{Oracle}}.}
 \cvitem{Others}
     {REST services, unit testing, puppet and vagrant.}
 
