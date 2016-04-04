@@ -232,12 +232,13 @@ order:
 %	INTERESTS SECTION
 %-------------------------------------------------------------------------------
 
-\section{Interests}
+% I'm not sure this section should be on a CV
+%\section{Interests}
 
-\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+%\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
 
-\cvlistdoubleitem{Free Software}{Tv Shows}
-\cvlistdoubleitem{ESports}{Online Gaming}
+%\cvlistdoubleitem{Free Software}{Tv Shows}
+%\cvlistdoubleitem{ESports}{Online Gaming}
 
 %-------------------------------------------------------------------------------
 
