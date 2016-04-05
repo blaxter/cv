@@ -132,7 +132,7 @@
 \begin{itemize}
 \item Cloud software development.
     \begin{itemize}
-        \item File synchronization with AWS.
+        \item File synchronization with AWS asynchronously with twisted.
         \item OpenStack Swift: middleware s3 support.
         \item Multiplatform desktop client for file synchronization using pyside.
     \end{itemize}
@@ -162,8 +162,8 @@ Design and implement custom projects for different clients, in no particular
 order:
 \begin{itemize}
 \item Web applications with Ruby On Rails.
-\item Desktop applications with java and swt.
-\item Web Applications with java and gwt.
+\item Desktop applications with Java and SWT.
+\item Web Applications with Java and GWT.
 \item REST Web Services.
 \item Use of python for internal tools and improve internal work processes.
 \item Use of perl for server side applications.
@@ -226,7 +226,7 @@ order:
 
 \section{Languages}
 
-\cvitemwithcomment{Spanish}{Mothertongue}{}
+\cvitemwithcomment{Spanish}{Mother tongue}{}
 \cvitemwithcomment{English}{Intermediate}{Full professional proficiency}
 
 %-------------------------------------------------------------------------------
