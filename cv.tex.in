@@ -132,7 +132,7 @@
 \begin{itemize}
 \item Cloud software development.
     \begin{itemize}
-        \item File synchronization with AWS.
+        \item File synchronization with AWS asynchronously with twisted.
         \item OpenStack Swift: middleware s3 support.
         \item Multiplatform desktop client for file synchronization using pyside.
     \end{itemize}
